@@ -1,0 +1,56 @@
+# AidSight 系统配置文件
+
+system:
+  name: "AidSight"
+  version: "1.0.0"
+  description: "视障辅助导航系统"
+
+# 摄像头配置
+camera:
+  device_id: 0          # 摄像头设备 ID (0 表示默认摄像头)
+  width: 1280           # 视频宽度
+  height: 720           # 视频高度
+  fps: 30               # 摄像头帧率
+
+# 模型配置
+models:
+  # 障碍物检测模型路径（.om 格式）
+  obstacle: "deployment/models/yolov7_obstacle.om"
+  # 红绿灯检测模型路径（.om 格式）
+  traffic: "deployment/models/yolov7_traffic.om"
+
+# 检测配置
+detection:
+  conf_threshold: 0.5   # 置信度阈值
+  nms_threshold: 0.45   # NMS 阈值
+  fps: 10               # 检测帧率（降低以节省计算资源）
+
+# 决策配置
+decision:
+  danger_threshold: 0.3    # 危险距离阈值（bbox 面积占比）
+  warning_threshold: 0.15  # 警告距离阈值（bbox 面积占比）
+
+# 音频配置
+audio:
+  # 蓝牙骨传导耳机 MAC 地址（可选，留空则使用默认音频输出）
+  bluetooth_device: ""  # 例如: "00:11:22:33:44:55"
+  volume: 80            # 音量 (0-100)
+  
+  # 音频资源目录
+  audio_dir: "audio_assets"
+
+# 日志配置
+logging:
+  level: "INFO"              # 日志级别: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "logs/aidsight.log"  # 日志文件路径
+  
+  # 日志轮转配置（可选）
+  max_bytes: 10485760        # 单个日志文件最大大小 (10MB)
+  backup_count: 5            # 保留的日志文件数量
+
+# 性能配置
+performance:
+  # 是否启用性能监控
+  enable_monitoring: true
+  # 是否显示 FPS
+  show_fps: true
