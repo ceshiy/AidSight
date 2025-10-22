@@ -33,7 +33,7 @@
 ### 1. 环境依赖
 
 ```bash
-pip install opencv-python pyyaml requests pyqt5 numpy
+pip install -r requirements.txt
 # MindSpore 安装请参考官方文档（根据硬件选择 Ascend/GPU/CPU 版本）
 # https://www.mindspore.cn/install
 
