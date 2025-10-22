@@ -10,6 +10,8 @@ PyYAML>=5.3
 tqdm
 opencv-python>=4.7.0.68
 opencv-python-headless>=4.7.0.68
+openai
+PyQt5
 
 # Extras
 albumentations>=1.0.3
