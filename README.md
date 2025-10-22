@@ -36,3 +36,15 @@
 pip install opencv-python pyyaml requests pyqt5 numpy
 # MindSpore 安装请参考官方文档（根据硬件选择 Ascend/GPU/CPU 版本）
 # https://www.mindspore.cn/install
+
+## ▶️ 启动命令
+
+### ✅ 正确用法示例
+
+#### 1. 使用摄像头（最常用）
+```bash
+python demo/app_ui.py --config configs/yolov8n.yaml --weight weights/yolov8n.ckpt --source 0 --device_target Ascend/CPU/GPU
+
+#### 1. 使用摄像头（最常用）
+```bash
+python demo/app_ui.py --config configs/yolov8n.yaml --weight weights/yolov8n.ckpt --source *.mp4 --device_target Ascend/CPU/GPU
